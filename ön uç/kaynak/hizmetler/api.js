@@ -73,3 +73,20 @@ export const classifyHadith = (hadisId) => {
     // Şimdilik POST olduğunu varsayıyoruz.
     return axios.post(`${API_URL}/hadisler/${hadisId}/classify`);
 };
+// frontend/src/services/api.js
+import axios from 'axios';
+
+const API_URL = 'http://localhost:8000';
+
+// --- Râvi Fonksiyonları ---
+export const getRaviler = () => axios.get(`${API_URL}/raviler/`);
+export const createRavi = (raviData) => axios.post(`${API_URL}/raviler/`, raviData);
+
+// --- Hadis Fonksiyonları ---
+export const getHadisler = () => axios.get(`${API_URL}/hadisler/`);
+// Not: Backend'deki HadisCreate şemanızın isnad için bir ID listesi beklediğini varsayıyoruz.
+export const createHadis = (hadisData) => axios.post(`${API_URL}/hadisler/`, hadisData);
+
+// --- Sınıflandırma Fonksiyonu ---
+// Bu endpoint'i backend'de oluşturduktan sonra bu fonksiyonu kullanacağız.
+export const classifyHadith = (hadisId) => axios.post(`${API_URL}/hadisler/${hadisId}/classify`);
