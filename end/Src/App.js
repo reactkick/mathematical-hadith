@@ -70,3 +70,25 @@ function App() {
 }
 
 export default App;
+// frontend/src/App.js
+import React from 'react';
+import RaviForm from './components/RaviForm';
+import HadisPage from './components/HadisPage';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Matematiksel Hadis Sınıflandırma Projesi</h1>
+      </header>
+      <main>
+        <RaviForm />
+        <hr />
+        <HadisPage />
+      </main>
+    </div>
+  );
+}
+
+export default App;
