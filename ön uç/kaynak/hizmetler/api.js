@@ -90,3 +90,5 @@ export const createHadis = (hadisData) => axios.post(`${API_URL}/hadisler/`, had
 // --- Sınıflandırma Fonksiyonu ---
 // Bu endpoint'i backend'de oluşturduktan sonra bu fonksiyonu kullanacağız.
 export const classifyHadith = (hadisId) => axios.post(`${API_URL}/hadisler/${hadisId}/classify`);
+// const API_URL = 'http://localhost:8000'; // Bu eski adres
+const API_URL = 'https://mathematical-hadith-backend.onrender.com'; // Bu YENİ adres
