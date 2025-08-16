@@ -1,0 +1,26 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware # Bu satırı ekleyin
+
+# ... diğer importlar ...
+
+app = FastAPI(
+    title="Hadis Sınıflandırma API",
+    description="Bu API, hadis rivayetlerini sened zincirine göre sınıflandırır."
+)
+
+# --- CORS Middleware Ayarları ---
+# Frontend'den gelen isteklere izin vermek için bu bloğu ekleyin
+origins = [
+    "http://localhost:3000", # React uygulamasının çalıştığı adres
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"], # Tüm metodlara (GET, POST vb.) izin ver
+    allow_headers=["*"], # Tüm başlıklara izin ver
+)
+# --- Bitiş ---
+
+# ... API endpoint kodunuz buradan devam ediyor ...
