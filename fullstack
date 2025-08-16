@@ -1,0 +1,20 @@
+mathematical-hadith-fullstack/   <-- BÜTÜN PROJENİZİN ANA KLASÖRÜ
+|
+├── frontend/                     <-- MEVCUT GITHUB PROJENİZİN TAMAMI BU KLASÖRDE OLMALI
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   │   └── App.js                <-- API isteğini yapacağınız yer burası olabilir
+│   ├── package.json
+│   └── ... (diğer react dosyaları)
+│
+└── backend/                      <-- YENİ OLUŞTURACAĞINIZ PYTHON ARKA UÇ PROJESİ
+    ├── venv/                     <-- Python sanal ortamı (önerilir)
+    ├── app/
+    │   ├── __init__.py           <-- Boş dosya
+    │   ├── main.py               <-- API'nin giriş noktası (FastAPI kodu burada)
+    │   └── logic/
+    │       ├── __init__.py       <-- Boş dosya
+    │       └── hadith_classifier.py  <-- BİZİM OLUŞTURDUĞUMUZ HADİS SINIFLANDIRMA KODU BURAYA GELECEK
+    │
+    └── requirements.txt          <-- Gerekli Python kütüphaneleri (fastapi, uvicorn)
