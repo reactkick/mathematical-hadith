@@ -117,3 +117,26 @@ function HadisPage() {
 }
 
 export default HadisPage;
+import React, { useState, useEffect } from 'react';
+// Oluşturduğumuz servis dosyasından istediğimiz fonksiyonları import ediyoruz
+import { getHadisler, getRaviler } from '../services/api';
+
+function HadisPage() {
+    const [hadisler, setHadisler] = useState([]);
+
+    useEffect(() => {
+        // Bileşen ilk yüklendiğinde API'yi çağırıp hadisleri çekiyoruz
+        const fetchHadisler = async () => {
+            try {
+                const response = await getHadisler();
+                setHadisler(response.data);
+            } catch (error) {
+                console.error("Hadisler çekilirken bir hata oluştu:", error);
+            }
+        };
+
+        fetchHadisler();
+    }, []);
+
+    // ... bileşenin geri kalanı ...
+}
