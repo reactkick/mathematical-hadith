@@ -92,3 +92,33 @@ function App() {
 }
 
 export default App;
+// frontend/src/App.js
+import React from 'react';
+import RaviForm from './components/RaviForm';
+import HadisPage from './components/HadisPage';
+import './App.css';
+
+function App() {
+  // Râvi eklendiğinde HadisPage'in yeniden render olmasını sağlamak zor olabilir.
+  // Şimdilik sayfayı yenilemek en basit çözüm. 
+  // Daha ileri seviye için state management (Redux, Context API) gerekir.
+  const handleRaviAdded = () => {
+    window.location.reload(); // En basit yöntem
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Matematiksel Hadis Sınıflandırma Projesi</h1>
+      </header>
+      <main>
+        {/* Râvi eklendiğinde sayfayı yenilemek için fonksiyonu prop olarak geçiyoruz */}
+        <RaviForm onRaviAdded={handleRaviAdded} />
+        
+        <HadisPage />
+      </main>
+    </div>
+  );
+}
+
+export default App;
