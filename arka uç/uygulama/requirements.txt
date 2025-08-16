@@ -1,0 +1,6 @@
+mathematical-hadith/
+└── backend/
+    ├── app/
+    │   └── ...
+    ├── requirements.txt   <-- DOSYA BURADA OLMALI
+    └── ...
