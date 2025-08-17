@@ -36,3 +36,14 @@ CERH_VE_TADIL_SKOR_HARITASI = {
     "kezzab": 0.0,
     "vadda'": 0.0, # Hadis uyduran
 }
+# backend/app/constants.py
+
+# ... mevcut CERH_VE_TADIL_SKOR_HARITASI ...
+
+# Hadislerin nihai skorlarına göre verilecek hükümleri tanımlayan eşik değerleri
+HUKUM_ESIKLERI = {
+    "SAHİH": 0.90,
+    "HASEN": 0.75,
+    "ZAYIF": 0.50,
+    # 0.50 altı "ÇOK ZAYIF" olarak kabul edilebilir.
+}
