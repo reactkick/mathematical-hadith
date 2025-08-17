@@ -16,3 +16,16 @@ def hesapla_ravi_skor_endpoint(ravi_id: int, db: Session = Depends(get_db)):
     # db.commit()
     
     return hesaplanan_skorlar
+# backend/app/main.py dosyasının sonuna ekleyin
+
+@app.post("/hadisler/{hadis_id}/classify", response_model=schemas.SiniflandirmaSonuc)
+def classify_hadith_endpoint(hadis_id: int, db: Session = Depends(get_db)):
+    """
+    Bir hadisin sıhhat durumunu, isnadındaki râvilerin güvenilirlik
+    skorlarına dayanarak otomatik olarak sınıflandırır.
+    """
+    sonuc = services.siniflandir_hadis(db, hadis_id=hadis_id)
+    if "hata" in sonuc:
+        raise HTTPException(status_code=404, detail=sonuc["hata"])
+    
+    return sonuc
