@@ -92,3 +92,17 @@ export const createHadis = (hadisData) => axios.post(`${API_URL}/hadisler/`, had
 export const classifyHadith = (hadisId) => axios.post(`${API_URL}/hadisler/${hadisId}/classify`);
 // const API_URL = 'http://localhost:8000'; // Bu eski adres
 const API_URL = 'https://mathematical-hadith-backend.onrender.com'; // Bu YENİ adres
+// frontend/src/services/api.js
+
+// ... diğer fonksiyonlar ...
+
+// --- Sınıflandırma Fonksiyonu ---
+/**
+ * Belirli bir hadisin sıhhat durumunu hesaplamak için sınıflandırma endpoint'ini tetikler.
+ * @param {number} hadisId - Sınıflandırılacak hadisin ID'si.
+ * @returns {Promise<AxiosResponse<any>>} Sınıflandırma sonucunu içeren bir Promise.
+ */
+export const classifyHadith = (hadisId) => {
+    // Backend'de bu endpoint'i POST olarak tanımlamıştık.
+    return axios.post(`${API_URL}/hadisler/${hadisId}/classify`);
+};
