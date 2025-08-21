@@ -22,3 +22,4 @@ class RivayetZinciri(Base):
     
     hadis = relationship("Hadis", back_populates="zincirler")
     ravi = relationship("Ravi")
+user_id = Sütun(UUID(as_uuid=True), boş bırakılabilir=False)
